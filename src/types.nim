@@ -16,7 +16,6 @@ type
     fonts*: Table[string, PFont]
     messages*: seq[ref MessageBox]
 
-
   Scene* = object of RootObj
     ctl*: ref Controller
     manager*: ref SceneManager
@@ -25,23 +24,6 @@ type
     ctl*: ref Controller
     scene*: ref Scene
 
-  GameScene* = object of Scene
-    hoverSystem*: ref HoverSystem
-    clickSystem*: ref ClickSystem
-    hasWon*: bool
-
-  MenuScene* = object of Scene
-    
-    play_msg*: ref MessageBox
-    quit_msg*: ref MessageBox
-
-  HoverSystem* = object
-    scene*: ref GameScene
-    i*, k*: int
-
-  ClickSystem* = object
-    scene*: ref GameScene
-
   MessageBox* = object
     messageText*: string
     x*,y*,size*: int
@@ -49,5 +31,4 @@ type
     s*: graphics.PSurface
     isVisible*: bool
 
-  ResourceManager*[T] = Table[string, T]
-    
+      
