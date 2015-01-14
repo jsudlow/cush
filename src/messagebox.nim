@@ -1,5 +1,11 @@
 import graphics
-
+type
+  MessageBox* = object
+      messageText*: string
+      x*,y*,size*: int
+      font*: PFont
+      s*: graphics.PSurface
+      isVisible*: bool
 proc newMessageBox*(messageText: string, x, y: int, font: PFont ): ref MessageBox =
   let
     textSize = textBounds(messageText, font)

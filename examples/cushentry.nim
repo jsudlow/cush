@@ -1,4 +1,6 @@
-import app,menu
+import consts
+
+import app,menu,scene
 
 #declare the scene you want to run
 

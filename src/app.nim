@@ -1,8 +1,15 @@
-import graphics, sdl, tables, strutils
+import graphics
 
+import sdl, tables, strutils
 import scene
 import controller
 import messagebox
+
+type
+  App* = object
+    display*: graphics.PSurface
+    manager*: ref SceneManager
+    ctl*: ref Controller
 
 proc init*(self: ref App,
            first_scene: ref Scene,

@@ -1,4 +1,14 @@
-import graphics, tables, sdl,colors,messagebox
+import graphics, tables, sdl,colors,messagebox,utils
+type
+  Controller* = object
+      display*: graphics.PSurface
+      should_close*: bool
+      keys*: KeyMap
+      mods*: ModMap
+      mouseX*, mouseY*: int
+      mouseDown*: bool
+      fonts*: Table[string, PFont]
+      messages*: seq[ref MessageBox]
 
 proc newController*(display: graphics.PSurface): ref Controller =
   result = new(Controller)

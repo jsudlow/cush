@@ -1,5 +1,18 @@
 
-import sdl, typetraits
+import sdl, typetraits,controller, messagebox
+
+type
+  Scene* = object of RootObj
+    ctl*: ref Controller
+    manager*: ref SceneManager
+
+  SceneManager* = object of RootObj
+    ctl*: ref Controller
+    scene*: ref Scene
+
+  MenuScene* = object of Scene
+    play_msg*: ref MessageBox
+    quit_msg*: ref MessageBox
 
 method enter*(self: ref Scene) =
   discard
