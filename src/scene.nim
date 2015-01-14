@@ -10,10 +10,7 @@ type
     ctl*: ref Controller
     scene*: ref Scene
 
-  MenuScene* = object of Scene
-    play_msg*: ref MessageBox
-    quit_msg*: ref MessageBox
-
+ 
 method enter*(self: ref Scene) =
   discard
 
