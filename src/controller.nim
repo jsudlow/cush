@@ -1,4 +1,4 @@
-import graphics, tables, sdl,colors,messagebox,utils
+import graphics, tables, sdl,colors,messagebox
 type
   Controller* = object
       display*: graphics.PSurface
@@ -24,10 +24,6 @@ proc close*(self: ref Controller) =
 
 proc closing*(self: ref Controller): bool =
   result = self.should_close
-
-proc hasPlayerWon*(self: ref Controller): bool =
-  #Implement your win logic
-  return true
 
 proc newFont*(self: ref Controller, name, fontfile: string, size = 18, color = colWhite) =
   self.fonts[name] = graphics.newFont(fontfile,size,color)
